@@ -8,7 +8,7 @@ const guide = document.querySelector("#guide");
 const GUIDE_FADE_IN = "guide_fade_in";
 const GUIDE_FADE_OUT = "guide_fade_out";
 
-const matchName = (name) => name.match(/([1-2])([1-8])([0-2]\d)([가-힣]{3})/);
+const matchName = (name) => name.match(/([1-2])([1-8])([0-2]\d)/);
 
 const checkNameValid = (name) => {
   regex = matchName(name);

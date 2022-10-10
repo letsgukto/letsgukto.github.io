@@ -9,8 +9,6 @@ const gotoGetName = () => location.replace("/get-name.html");
 const getInfo = (name) => name.match(/([1-2])([1-8])([0-2]\d)([가-힣]{3})/);
 
 const init = () => {
-  localStorage.clear();
-
   if (!checkNameExist()) return gotoGetName(); //#1
 
   //#2
