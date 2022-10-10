@@ -6,7 +6,7 @@ const checkNameExist = () => getName !== null;
 const gotoGetName = () => location.replace("/get-name.html");
 
 //유저 정보 추출, 유저 이름에 맞는 파일 받아오기 #2
-const getInfo = (name) => name.match(/([1-2])([1-8])([0-2]\d)([가-힣]{3})/);
+const getInfo = (name) => name.match(/([1-2])([1-8])([0-2]\d)/);
 
 const init = () => {
   if (!checkNameExist()) return gotoGetName(); //#1
