@@ -1,0 +1,49 @@
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+}
+
+.days_goto_seefiles {
+  display: flex;
+  flex-direction: row;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.thumnail > span > input {
+  display: none;
+}
+
+.thumnail > span > input + label {
+  display: block;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: relative;
+} 
+
+.thumnail > span > input + label > em {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  width: 30px; 
+  height: 30px;
+  transform: translate(0, -50%);
+  background-repeat: no-repeat;
+  background-image: url('/circle-chevron.png');
+  background-size: 30px;
+  transition: all 0.35s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.thumnail > span > input + label.checked > em {
+  transform: translate(0, -50%) rotateZ(180deg);
+}
+
+.thumnail + div {
+  max-height: 0;
+  transition: all 0.35s cubic-bezier(0.83, 0, 0.17, 1);
+  overflow: hidden;
+}

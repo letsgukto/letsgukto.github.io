@@ -5,6 +5,7 @@ const body = document.body;
 const CLASS_THANKS_MSG = "thanks_msg";
 const CLASS_THUMNAIL_MSG = "thumnail_msg";
 const CLASS_THUMNAIL = "thumnail";
+const CLASS_CHECKED = "checked";
 
 const CLASS_MATCH = "인의예지매난국죽";
 const INFO_FORMAT = /([1-2])([1-8])([0-2]\d)([가-힣]{3})/;
@@ -22,7 +23,7 @@ const createMsgElement = (msg) => {
 const createMsgHolder = (url, a, b, c) => c(b(a(url)));
 
 //create holder for thumnail of accordian menu
-const createThumnailMsg = (msg, createrInfo) => `<h4>${createrInfo[4]}님의 "${msg}" 보기</h4><em></em>`;
+const createThumnailMsg = (msg, createrInfo) => `<h4>${createrInfo[4]}님의 <br>"${msg}" 보기</h4><em></em>`;
 const createThumnailElement = (thumnailMsg) => {
   const msgElement = document.createElement("label");
   msgElement.innerHTML = thumnailMsg;
@@ -52,13 +53,26 @@ const loadPdf = (container, pdfUrl, thumnailMsg) => {
   togglerHolder.appendChild(accordionToggle);
   const labelForToggle = createThumnailHolder(thumnailMsg, getInfo(pdfUrl), createThumnailElement, createThumnailMsg);
   togglerHolder.appendChild(labelForToggle);
-  const toggler = document.createElement("em");
-  labelForToggle.appendChild(toggler);
-
-  thumnail.appendChild(togglerHolder);
 
   const canvasContainer = document.createElement("div");
   container.appendChild(canvasContainer);
+
+  labelForToggle.addEventListener("click", () => {
+    const isChecked = canvasContainer.classList.toggle(CLASS_CHECKED);
+    labelForToggle.classList.toggle(CLASS_CHECKED);
+
+    if (isChecked) {
+      const canvases = canvasContainer.querySelectorAll("canvas");
+      const maxHeight = canvases[0].height * canvases.length;
+
+      canvasContainer.style.maxHeight = `${maxHeight}px`;
+    } else {
+      canvasContainer.style.maxHeight = "0px";
+    }
+  });
+
+  thumnail.appendChild(togglerHolder);
+
 
   const loadingTask = pdfjsLib.getDocument(pdfUrl);
   loadingTask.promise.then(
@@ -88,6 +102,7 @@ const loadPdf = (container, pdfUrl, thumnailMsg) => {
     },
     function(reason) {
       alert("pdf 로딩 도중 에러 발생..ㅠㅠ");
+      console.error(reason);
     }
   );
 };
@@ -107,6 +122,8 @@ const init = () => {
   loadPdf(pdfLoader_2312, "/pdf/2312소현형.pdf", "국립대전현충원");
   const pdfLoader_2316 = document.querySelector("#pdf_2316");
   loadPdf(pdfLoader_2316, "/pdf/2316이서종.pdf", "나로우주센터");
+  const pdfLoader_2408 = document.querySelector("#pdf_2408");
+  loadPdf(pdfLoader_2408, "/pdf/2408안서연.pdf", "고하도");
   const pdfLoader_2411 = document.querySelector("#pdf_2411");
   loadPdf(pdfLoader_2411, "/pdf/2411이래은.pdf", "금강습지생태공원, 진포시비공원");
   const pdfLoader_2414 = document.querySelector("#pdf_2414");
