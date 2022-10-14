@@ -164,6 +164,8 @@ const init = () => {
   loadPdf(pdfLoader_2613, "/img/2613양진서", "국립대전현충원", 2);
   const pdfLoader_2614 = document.querySelector("#pdf_2614");
   loadPdf(pdfLoader_2614, "/img/2614오정윤", "고하도", 1);
+  const pdfLoader_2704 = document.querySelector("#pdf_2704");
+  loadPdf(pdfLoader_2704, "/img/2704김경현", "금강습지, 진포시비공원", 2);
   const pdfLoader_2804 = document.querySelector("#pdf_2804");
   loadPdf(pdfLoader_2804, "/img/2804김민지", "속리산 문장대", 1);
 };
