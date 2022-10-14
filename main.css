@@ -3,14 +3,78 @@
   margin: 0;
 }
 
-.days_goto_seefiles {
-  display: flex;
-  flex-direction: row;
+#days {
+  margin-top: 100px;
 }
 
-canvas {
+header {
+  position:fixed;
+  top: 0;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+header.scrollTop {
+  
+}
+
+header > img {
+  width: 20px;
+}
+
+h1 {
   width: 100%;
-  height: 100%;
+  text-align: center;
+  font-size: 60px;
+  margin-top: 30px;
+}
+
+h2 {
+  font-size: xx-large;
+  margin-left: 40px;
+  width: fit-content;
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+/* .morning > h2 {
+  background: linear-gradient(to right, rgb(0 149 255) 10%, #8f22ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #8f22ff;
+}
+
+.afternoon > h2 {
+  background: linear-gradient(to right, rgb(255, 57, 84), #f89452);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #9c27b0;
+} */
+
+.thanks_msg {
+  padding-left: 10px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+h4 > span {
+  font-size: x-large;
+}
+
+header > #headerMsg {
+  position: absolute;
+  width: 100%;
+}
+
+h5{
+  text-align: center;
+  flex-grow: 1;
+}
+
+span[id*="일차"] > span > div[id*="pdf"]:last-child > div {
+  margin-bottom: 20px;
+}
+
+div > img {
+  width: 100%;
 }
 
 .thumnail > span > input {
@@ -20,7 +84,9 @@ canvas {
 .thumnail > span > input + label {
   display: block;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.1);
+/*   background: rgba(0, 255, 255, 0.1); */
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   cursor: pointer;
   position: relative;
 } 
