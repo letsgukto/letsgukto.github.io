@@ -8,17 +8,43 @@
 }
 
 header {
-  position:fixed;
+  position: fixed;
   top: 0;
-  margin-top: 5px;
-  margin-left: 5px;
+  padding-top: 5px;
+  width: 100%;
+  background: #fff;
+  z-index: 100;
+}
+
+header > hr {
+  border: none;
+  border-top: 1px black solid;
 }
 
 header.scrollTop {
-  
+/*   filter: opacity(0.5); */
+}
+
+header > #headerMsg {
+  width: 100%;
+  position: relative;
+}
+
+h5{
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  text-align: center;
 }
 
 header > img {
+  margin-left: 5px;
+  width: 20px;
+}
+
+header > #headerMsg > img {
+  position: absolute;
+  transform: translate(calc(100vw - 50px));
   width: 20px;
 }
 
@@ -57,16 +83,6 @@ h2 {
 
 h4 > span {
   font-size: x-large;
-}
-
-header > #headerMsg {
-  position: absolute;
-  width: 100%;
-}
-
-h5{
-  text-align: center;
-  flex-grow: 1;
 }
 
 span[id*="일차"] > span > div[id*="pdf"]:last-child > div {
