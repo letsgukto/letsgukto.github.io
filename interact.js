@@ -136,7 +136,6 @@ window.addEventListener("scroll", windowHandler);
 navBar.addEventListener("scroll", navBarHandler);
 
 navBtns.forEach((btn, index) => {
-  console.log("d")
   // btn.addEventListener("touchstart", (e) => {
   //   btn.lateX = e.targetTouches.clientX; 
   //   btn.lateY = e.targetTouches.clientY; 
