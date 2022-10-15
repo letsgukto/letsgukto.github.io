@@ -78,35 +78,35 @@ const loadPdf = (container, pdfUrl, thumnailMsg, numOfImgs) => {
           setTimeout(() => {
             const maxHeight = canvases[0].height * canvases.length;
             canvasContainer.style.maxHeight = `${maxHeight}px`;
-          }, 100);
+          }, 500);
           
-          canvasContainers.forEach((div) => {
-            div.classList.remove(CLASS_CHECKED);
-            div.style.maxHeight = "0px";
-          });
-          labels.forEach((label) => {
-            label.classList.remove(CLASS_CHECKED);
-          })
-          canvasContainer.classList.add(CLASS_CHECKED);
+          // canvasContainers.forEach((div) => {
+          //   div.classList.remove(CLASS_CHECKED);
+          //   div.style.maxHeight = "0px";
+          // });
+          // labels.forEach((label) => {
+          //   label.classList.remove(CLASS_CHECKED);
+          // })
+          // canvasContainer.classList.add(CLASS_CHECKED);
           labelForToggle.classList.add(CLASS_CHECKED);
-          setTimeout(() => {container.scrollIntoView({ behavior: 'smooth' })}, 300);
+          // setTimeout(() => {container.scrollIntoView({ behavior: 'smooth' })}, 300);
         });
         return;
       }
-      canvasContainers.forEach((div) => {
-        div.classList.remove(CLASS_CHECKED);
-        div.style.maxHeight = "0px";
-      });
-      labels.forEach((label) => {
-        label.classList.remove(CLASS_CHECKED);
-      })
+      // canvasContainers.forEach((div) => {
+      //   div.classList.remove(CLASS_CHECKED);
+      //   div.style.maxHeight = "0px";
+      // });
+      // labels.forEach((label) => {
+      //   label.classList.remove(CLASS_CHECKED);
+      // })
       
       const maxHeight = canvases[0].height * canvases.length;
       canvasContainer.style.maxHeight = `${maxHeight}px`;
       
-      canvasContainer.classList.add(CLASS_CHECKED);
+      // canvasContainer.classList.add(CLASS_CHECKED);
       labelForToggle.classList.add(CLASS_CHECKED);
-      setTimeout(() => {container.scrollIntoView({ behavior: 'smooth' })}, 300);
+      // setTimeout(() => {container.scrollIntoView({ behavior: 'smooth' })}, 300);
     } else {
       labelForToggle.classList.remove(CLASS_CHECKED);
       canvasContainer.style.maxHeight = "0px";
