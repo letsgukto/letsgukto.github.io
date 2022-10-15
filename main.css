@@ -5,14 +5,15 @@
 
 #days {
   margin-top: 100px;
+  background: #fffefa;
 }
 
 header {
   position: fixed;
   top: 0;
   padding-top: 5px;
+  background: #fffefa;
   width: 100%;
-  background: #fff;
   z-index: 100;
 }
 
@@ -30,7 +31,7 @@ header > #headerMsg {
   position: relative;
 }
 
-h5{
+#headerMsg > h5 {
   position: absolute;
   top: 0;
   width: 100vw;
@@ -76,9 +77,38 @@ h2 {
   color: #9c27b0;
 } */
 
+#dev_members {
+/*   height: max-content; */
+  margin-top: 200px;
+  background: #0d1011;
+  color: #fffefa;
+  padding: 20px 10px 8px 10px;
+}
+
+#dev_members > #special_thanks > h5 {
+  text-align: right;
+}
+
+#dev_members > div > h5:nth-child(1) {
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+
+#dev_members > div > h5:nth-child(2) {
+  font-family: 'Nanum Myeongjo', serif;
+  word-break: keep-all;
+}
+
 .thanks_msg {
   padding-left: 10px;
   color: rgba(0, 0, 0, 0.7);
+}
+
+.thumnail_img {
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  position: relative;
 }
 
 h4 > span {
