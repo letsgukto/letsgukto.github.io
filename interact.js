@@ -116,12 +116,12 @@ const scrollToFocus = (index) => {
 scrollToFocus(0);
 
 window.onload = () => {
+  navBar.style.transitionDuration = ".6s";
   const thumImgPos = thumImg.getBoundingClientRect();
   if(-thumImgPos.y > 30) {
     thumImg.style.height = "0px";
     return;
   }
-  navBar.style.transitionDuration = ".6s";
   thumImg.style.transitionDuration = ".9s";
   thumImg.style.transitionTimingFunction = "cubic-bezier(0.83, 0, 0.17, 1)";
   thumImg.style.opacity = 1;
