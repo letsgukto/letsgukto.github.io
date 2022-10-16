@@ -75,10 +75,8 @@ const loadPdf = (container, pdfUrl, thumnailMsg, numOfImgs) => {
           curImg.src = curImg.dataset.src;
         }        
         canvases[canvases.length - 1].addEventListener("load", () => {
-          setTimeout(() => {
-            const maxHeight = canvases[0].height * canvases.length;
-            canvasContainer.style.maxHeight = `${maxHeight}px`;
-          }, 500);
+          const maxHeight = canvases[canvases.length - 1].naturalHeight * canvases.length;
+          canvasContainer.style.maxHeight = `${maxHeight}px`;
           
           // canvasContainers.forEach((div) => {
           //   div.classList.remove(CLASS_CHECKED);
