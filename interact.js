@@ -6,8 +6,8 @@ const navBar = document.querySelector(".nav_bar");
 const days = document.querySelectorAll(".day");
 const wraper = document.querySelector("#wraper");
 
-const NAV_BAR_WIDTH = 1080; 
-const NAV_BTN_WIDTH = 180;
+const NAV_BTN_WIDTH = navBtnFocused.clientWidth * 3 / 2;
+const NAV_BAR_WIDTH  = NAV_BTN_WIDTH * 7; 
 
 let windowFocusingTimers = [];
 let navBarFocusingTimers = [];
