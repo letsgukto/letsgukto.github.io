@@ -150,17 +150,12 @@ const scrollToFocus = (index) => {
   }, 500));
 }
 
-scrollToFocus(0);
-
 window.onload = () => {
-  if(window.scrollY > days[0].offsetTop - 57) {
-    navBar.style.opacity = 1;
-    navBar.style.maxHeight = "27px";
-  }
   navBar.style.transitionDuration = ".6s";
   navBar.style.transitionTimingFunction = "cubic-bezier(0.83, 0, 0.17, 1)";
-  const thumImgPos = thumImg.getBoundingClientRect();
-  if(-thumImgPos.y > 30) {
+  if(window.scrollY > days[0].offsetTop - 57 * 3) {
+    navBar.style.opacity = 1;
+    navBar.style.maxHeight = "27px";
     thumImg.style.height = "0px";
     return;
   }
