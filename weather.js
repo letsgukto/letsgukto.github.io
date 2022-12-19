@@ -12,15 +12,11 @@ function getWeather(lat, lng) {
       return reponse.json();
     })
     .then(function (json) {
+      console.log(json);
       const temperature = json.main.temp;
       const place = json.name;
-      console.log(json);
       weatherDisplay.innerText = `${temperature}℃ @ ${place}`;
     });
-}
-
-function saveCoord(coordsObj) {
-  localStorage.setItem(COORDS, JSON.stringify(coordsObj));
 }
 
 function handleGeo(geo) {
@@ -30,7 +26,6 @@ function handleGeo(geo) {
     latitude,
     longitude,
   };
-  saveCoord(coordsObj);
   getWeather(latitude, longitude);
 }
 
@@ -42,16 +37,4 @@ function getGeoLocal() {
   navigator.geolocation.getCurrentPosition(handleGeo, geoError);
 }
 
-function weatherinit() {
-  const loadedCoord = localStorage.getItem(COORDS);
-  if (loadedCoord === null) {
-    getGeoLocal();
-  } else {
-    const parsedCoord = JSON.parse(loadedCoord);
-    const latitude = parsedCoord.latitude;
-    const longitude = parsedCoord.longitude;
-    getWeather(latitude, longitude);
-  }
-}
-
-weatherinit();
+getGeoLocal();
