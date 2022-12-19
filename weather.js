@@ -42,7 +42,7 @@ function getGeoLocal() {
   navigator.geolocation.getCurrentPosition(handleGeo, geoError);
 }
 
-function init() {
+function weatherinit() {
   const loadedCoord = localStorage.getItem(COORDS);
   if (loadedCoord === null) {
     getGeoLocal();
@@ -54,4 +54,4 @@ function init() {
   }
 }
 
-init();
+weatherinit();
