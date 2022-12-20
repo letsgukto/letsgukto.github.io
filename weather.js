@@ -1,5 +1,5 @@
 const weatherContainer = document.querySelector(".js-weather");
-const weatherDisplay = weatherContainer.querySelector("h4");
+const weatherDisplay = weatherContainer.querySelector("h5");
 
 const API_KEY = "166ffdc63dbe78bd4828619076f171e0";
 const COORDS = "coords";
