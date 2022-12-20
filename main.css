@@ -94,8 +94,8 @@ header > img {
 
 header > #headerMsg > .js-weather {
   position: absolute;
-  transform: translate(calc(100vw - 85px));
-  width: 20px;
+  top: 0;
+  width: 100vw;
 }
 
 h1 {
